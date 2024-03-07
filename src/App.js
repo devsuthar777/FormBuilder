@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './core/common/Navbar';
+import HomePage from './core/pages/HomePage';
+import { Routes,Route } from 'react-router-dom';
+import AllFormsPage from './core/pages/AllFormsPage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className={`w-full min-h-screen  bg-richblue-5 overflow-hidden flex flex-col font-inter`}>
+    <Navbar  />
+    <Routes>
+       <Route path="/" element ={<HomePage/>} />
+      <Route path="/viewAllForms" element ={<AllFormsPage/>} />
+       {/*<Route path="/fromCreation" element ={<HireMePage/>} />
+       <Route path="*" element ={<DevOr404Page/>} />
+       <Route path="/viewform?formdId:id" element={<ProjectsPage/>}> */}
+
+     
+    </Routes>
+  </div>
   );
 }
 

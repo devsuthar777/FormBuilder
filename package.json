@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "body-parser": "^1.20.2",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
@@ -15,6 +16,8 @@
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.1",
     "web-vitals": "^2.1.4"
@@ -24,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nodesrver":"nodemon backend/server.js",
+    "nodesrver": "nodemon backend/server.js",
     "server": "cd backend && npm run nodesrver",
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run nodesrver\""
   },
