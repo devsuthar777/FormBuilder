@@ -1,7 +1,7 @@
 import React from 'react'
 import imageLogo from '../assests/oneture-high-resolution-logo.png'
 const HomePage = () => {
-    
+
   return (
     <div className='w-10/12 mx-auto mt-7'>
         <h1 className='text-5xl text-center mt'>Welcome to FormBuilder</h1>

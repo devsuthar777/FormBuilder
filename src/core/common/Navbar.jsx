@@ -11,7 +11,7 @@ const Navbar = () => {
         <img alt="webLogo" src={formBuilderLogo} width={120} height={30}></img>
         
           <div className='flex my-auto w-1/2 justify-around'>
-            <Link className='bg-richblack-25 py-1 px-2 rounded-md hover:shadow-lg' >Create Form</Link>
+            <Link className='bg-richblack-25 py-1 px-2 rounded-md hover:shadow-lg' to={'/createForm'}>Create Form</Link>
             <Link className='bg-richblack-25 py-1 px-2 rounded-md hover:shadow-lg' to={'/viewAllForms'}>View Forms</Link>
           </div>
         
