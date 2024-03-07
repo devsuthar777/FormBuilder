@@ -11,14 +11,14 @@ const formFiledSchema = new mongoose.Schema({
         required:true,
         type:String
     },
-    index:{
+    fieldIndex:{
         required:true,
-        type:Number
+        type:String
     },
     options:
-    {
+    [{
         type:String
-    }
+    }]
 })
 
 module.exports = mongoose.model("formField",formFiledSchema);

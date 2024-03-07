@@ -12,12 +12,12 @@ const cors = require('cors');
 require('dotenv').config();
 const PORT = 4000;
 //importing routes
-//const recruiterRoute = require('./routes/recruiter');
+const formRoutes = require('./routes/formRoutes');
 app.use(express.json());
 app.use(cors());
 
-//mount  the recruiter route
-//app.use("/api/v1",recruiterRoute);
+//mount  the formsRoute route
+app.use("/api/v1",formRoutes);
 
 
 app.listen(PORT, () =>{

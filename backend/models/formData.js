@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const form = require('./forms');
+const formTemplate = require('./formTemplate');
 
 const formDataScheama = new mongoose.Schema({
     formId:{
         required:true,
         type:mongoose.Schema.Types.ObjectId,
-        ref:"form"
+        ref:"formTemplate"
     },
     formValue:
     {
@@ -13,3 +13,5 @@ const formDataScheama = new mongoose.Schema({
         type:String
     }
 })
+
+module.exports = mongoose.model("formData",formDataScheama);
