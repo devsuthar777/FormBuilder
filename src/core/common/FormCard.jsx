@@ -10,8 +10,8 @@ const FormCard = ({formDetails}) => {
           <p className='text-sm text-pure-greys-400'>Publisher: <span className='font-bold'>{formDetails.publisherName}</span></p>
         </div>
         <div className='w-full flex justify-around mb-3'>
-          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform?formId:"+formDetails._id}>Fill</Link>
-          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform?formId:"+formDetails._id} >Responses</Link>
+          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform/"+formDetails._id}>Fill</Link>
+          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform/"+formDetails._id} >Responses</Link>
         </div>
     </div>
     

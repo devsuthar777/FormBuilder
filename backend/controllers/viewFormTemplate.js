@@ -3,7 +3,7 @@ const formTemplate = require('../models/formTemplate');
 exports.viewFormTemplate = async (req,res) => {
     
     const {formId} = req.body;
-    console.log(formId);
+    console.log(req.body);
     if(!formId)
     {
         return res.status(400).json({
