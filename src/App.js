@@ -5,6 +5,7 @@ import HomePage from './core/pages/HomePage';
 import { Routes,Route } from 'react-router-dom';
 import AllFormsPage from './core/pages/AllFormsPage';
 import FormCreationPage from './core/pages/FormCreationPage';
+import FormFillAndViewPage from './core/pages/FormFillAndViewPage';
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
        <Route path="/" element ={<HomePage/>} />
       <Route path="/viewAllForms" element ={<AllFormsPage/>} />
       <Route path="/createForm" element ={<FormCreationPage/>} />
-       {/*<Route path="/fromCreation" element ={<HireMePage/>} />
-       <Route path="*" element ={<DevOr404Page/>} />
-       <Route path="/viewform?formdId:id" element={<ProjectsPage/>}> */}
+      <Route path="/viewform" element={<FormFillAndViewPage/>} /> 
+       {/* <Route path="*" element ={<DevOr404Page/>} /> */}
+       
 
      
     </Routes>

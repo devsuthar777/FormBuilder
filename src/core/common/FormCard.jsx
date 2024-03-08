@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FormCard = ({formDetails}) => {
   return (
@@ -9,8 +10,8 @@ const FormCard = ({formDetails}) => {
           <p className='text-sm text-pure-greys-400'>Publisher: <span className='font-bold'>{formDetails.publisherName}</span></p>
         </div>
         <div className='w-full flex justify-around mb-3'>
-          <button className='border rounded-md px-3 w-24 hover:shadow-lg text-center'>Fill</button>
-          <button className='border rounded-md px-3 w-24 hover:shadow-lg text-center' >Responses</button>
+          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform?formId:"+formDetails._id}>Fill</Link>
+          <Link className='border rounded-md px-3 w-24 hover:shadow-lg text-center' to={"/viewform?formId:"+formDetails._id} >Responses</Link>
         </div>
     </div>
     

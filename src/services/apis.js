@@ -2,12 +2,12 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 
 
 export const RetriveFroms = {
-    viewAllForms: BASE_URL + 'viewAllForms',
-    viewFormData: BASE_URL + 'viewFormData',
+    VIEW_ALL_FORMS: BASE_URL + 'viewAllForms',
+    VIEW_FORMDATA: BASE_URL + 'viewFormData',
 }
 
 export const submitForm = {
-    createForm :  BASE_URL + 'createForm',
-    submitForm :  BASE_URL + 'submitForm',
+    CREATE_FORM :  BASE_URL + 'createForm',
+    SUBMIT_FORM :  BASE_URL + 'submitForm',
 }
 
