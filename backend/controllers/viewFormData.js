@@ -1,14 +1,17 @@
 
 const formTemplate = require('../models/formTemplate');
 
-exports.viewFormData = async (req,res) =>{
 
+
+exports.viewFormData = async (req,res) =>{
+    console.log("meranam",req.body);
     try
     {
+        console.log(req.body);
         const {formId} = req.body;
 
         if(!formId){
-            return res.statu(400).json({
+            return res.status(400).json({
                 success:false,
                 message:"Invalid Form Id"
             })
@@ -34,7 +37,7 @@ exports.viewFormData = async (req,res) =>{
     catch(error)
     {
         console.log("Error while fetching form data:",error);
-        return res.statu(500).json({
+        return res.status(500).json({
             success:false,
             message:'Something went wrong! Please refresh the page'
         })

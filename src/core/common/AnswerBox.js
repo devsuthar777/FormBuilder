@@ -1,6 +1,7 @@
 import React from 'react'
 import RadioOption from './RadioOption';
 import DropDownOption from './DropDownOption';
+import OptionBox from './OptionBox';
 
 const AnswerBox = ({fieldData}) => {
     
@@ -13,7 +14,7 @@ const AnswerBox = ({fieldData}) => {
           case 'date':
             return <input className='rounded-md mt-2 w-5/10 px-10 py-2' type='date' placeholder={"DD/MM/YYYY"} ></input>;
           case 'radio':
-            return <RadioOption></RadioOption>;
+            return <OptionBox></OptionBox>;
           case 'dropdown':
                 return <DropDownOption></DropDownOption>;
         default: return <p>This is the default content.</p>;

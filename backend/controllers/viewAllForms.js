@@ -1,7 +1,7 @@
 
 const formTemplate = require('../models/formTemplate');
 exports.viewAllForms = async (req,res) => {
-    
+    console.log(req.body);
     try
     {
 

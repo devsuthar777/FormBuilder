@@ -3,7 +3,7 @@ const formTemplate = require('../models/formTemplate');
 exports.viewFormTemplate = async (req,res) => {
     
     const {formId} = req.body;
-    console.log(req.body);
+    console.log("formView",req.body);
     if(!formId)
     {
         return res.status(400).json({
@@ -15,7 +15,7 @@ exports.viewFormTemplate = async (req,res) => {
     try
     {
 
-        const formResponse = await formTemplate.findById(formId).populate("formFields").exec();;
+        const formResponse = await formTemplate.findById(formId).populate("formFields").exec();
         //const formResponse = await formTemplate.findById(formId);
         console.log(formResponse);
     if(formResponse){

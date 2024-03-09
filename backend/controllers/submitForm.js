@@ -6,18 +6,16 @@ exports.submitForm = async (req,res) =>
         {
             const {formId,formDataArray} = req.body;
            console.log("Request body:",{formId,formDataArray});
-           if(!(formId && formData)) 
+           if(!(formId && formDataArray)) 
            {
                 return res.status(400).json({
                     success:false,
                     message:'Something wrong with Request'
                 })
            }
+    
 
-           let formDataString = JSON.stringify(formDataArray);
-           console.log("formDataString :",formDataString);
-
-           const resFormData =await formData.create({formId,formValue:`${formDataString}`});
+           const resFormData =await formData.create({formId,formValue:`${formDataArray}`});
            console.log("resFormData :",resFormData);
 
            const updatedForm =await formTemplate.findByIdAndUpdate(formId,{$push:{formData:resFormData._id}},{new:true});

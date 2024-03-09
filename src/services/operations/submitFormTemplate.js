@@ -26,3 +26,31 @@ export const submitFormTemplate = async (formTemplateData,setLoader) =>{
 
     setLoader(false);
 }
+
+
+export const submitFormTemplateData = async (formId,formTemplateData,setLoader) =>{
+
+    try
+    {
+        setLoader(true);
+        console.log("FinalFormSubmission",{formId:`${formId}`,formDataArray:`${formTemplateData}`});
+        const result = await apiConnector("POST",submitForm.SUBMIT_FORM,{formId:`${formId}`,formDataArray:`${formTemplateData}`});
+        console.log(result);
+        if(result.data.success)
+        {
+             toast.success(result.data.message);
+        }
+        else
+        {
+            toast.error(result.data.message);   
+        }
+    }
+    catch(error)
+    {
+        console.log(error);
+        toast.success("Something went wrong!");
+    }
+
+
+    setLoader(false);
+}

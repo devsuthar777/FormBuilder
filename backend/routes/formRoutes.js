@@ -10,7 +10,7 @@ const {viewFormTemplate} = require('../controllers/viewFormTemplate');
 router.post('/createForm',createForm);
 router.post('/submitForm',submitForm);
 router.get('/viewAllForms',viewAllForms);
-router.get('/viewFormData',viewFormData);
-router.get('/viewFormTemplate',viewFormTemplate);
+router.post('/viewFormData',viewFormData);
+router.post('/viewFormTemplate',viewFormTemplate);
 
 module.exports = router;

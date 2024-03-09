@@ -9,11 +9,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 //const bodyParser = require('body-parser');
+
 require('dotenv').config();
 const PORT = 4000;
 //importing routes
 const formRoutes = require('./routes/formRoutes');
 app.use(express.json());
+
 app.use(cors());
 
 //mount  the formsRoute route

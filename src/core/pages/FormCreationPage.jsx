@@ -53,7 +53,7 @@ const FormCreationPage = () => {
     {
       loader ? <div className='loader mx-auto mt-72'></div> :(
         <>
-        <h1 className='text-3xl text-center mt-5'>Create Your Form</h1>
+        <h1 className='text-3xl text-center mt-5 font-bold mb-4'>Create Your Form</h1>
             <div className='w-10/12 h-full mx-auto'>
             <form className='flex flex-col gap-4'>
 

@@ -16,6 +16,7 @@ function App() {
       <Route path="/viewAllForms" element ={<AllFormsPage/>} />
       <Route path="/createForm" element ={<FormCreationPage/>} />
       <Route path="/viewform/:formId" element={<FormFillAndViewPage/>} /> 
+      <Route path="/viewformData/:formId" element={<FormFillAndViewPage/>} /> 
        {/* <Route path="*" element ={<DevOr404Page/>} /> */}
        
 

@@ -10,7 +10,7 @@ const formDataScheama = new mongoose.Schema({
     formValue:
     {
         required:true,
-        type:String
+        type:mongoose.Schema.Types.Array
     }
 })
 
