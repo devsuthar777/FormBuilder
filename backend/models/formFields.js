@@ -16,9 +16,10 @@ const formFiledSchema = new mongoose.Schema({
         type:String
     },
     options:
-    [{
-        type:String
-    }]
+    {
+        type:String,
+        
+    }
 })
 
 module.exports = mongoose.model("formField",formFiledSchema);

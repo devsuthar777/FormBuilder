@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import OptionViewBox from './OptionViewBox';
 
 const FieldViewBox = ({valData,element,index,size,subData,setSubData,onChangeFieldHandler}) => {
 
@@ -13,12 +14,10 @@ const FieldViewBox = ({valData,element,index,size,subData,setSubData,onChangeFie
             return <textarea name={"field"+index} value ={valData[index]} className='w-full rounded-md mt-2 px-2 py-1'  rows="3" cols="50" onChange={onChangeFieldHandler}></textarea>;
           case 'date':
             return <input name={"field"+index} value ={valData[index]} className='rounded-md mt-2 w-5/10 px-10 py-2' type='date' placeholder={"DD/MM/YYYY"} onChange={onChangeFieldHandler} ></input>;
-        //     case 'radio':
-        //     return <RadioOption></RadioOption>;
-        //   case 'dropdown':
-         //        return <DropDownOption></DropDownOption>;
-
-         case "dropdown":  
+           case 'radio':
+             return <OptionViewBox></OptionViewBox>;
+           case 'dropdown':
+                return <OptionViewBox></OptionViewBox>;
         default: return <p>This is the default content.</p>;
         }
       };

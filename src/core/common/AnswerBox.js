@@ -3,7 +3,7 @@ import RadioOption from './RadioOption';
 import DropDownOption from './DropDownOption';
 import OptionBox from './OptionBox';
 
-const AnswerBox = ({fieldData}) => {
+const AnswerBox = ({fieldData,setFieldData}) => {
     
     const getContentBasedOnSwitchValue = (switchValue) => {
         switch (switchValue) {
@@ -16,7 +16,7 @@ const AnswerBox = ({fieldData}) => {
           case 'radio':
             return <OptionBox></OptionBox>;
           case 'dropdown':
-                return <DropDownOption></DropDownOption>;
+                return <OptionBox setFieldData={setFieldData}></OptionBox>;
         default: return <p>This is the default content.</p>;
         }
       };

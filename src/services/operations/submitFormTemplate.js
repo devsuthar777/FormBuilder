@@ -20,7 +20,7 @@ export const submitFormTemplate = async (formTemplateData,setLoader) =>{
     catch(error)
     {
         console.log(error);
-        toast.success("Something went wrong!");
+        toast.error("Something went wrong!");
     }
 
 

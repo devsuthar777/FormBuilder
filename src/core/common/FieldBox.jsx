@@ -41,7 +41,7 @@ const FieldBox = ({element,fieldNo,filedUpdationHandler}) => {
                 <option value="dropdown">DropDown</option>
             </select>
         </div>
-        <AnswerBox fieldData={fieldData}></AnswerBox>
+        <AnswerBox fieldData={fieldData} setFieldData={setFieldData}></AnswerBox>
         <div className='w-4/5 h-1 bg-richblack-700 mx-auto mt-2'></div>
     </div>
   )

@@ -16,7 +16,7 @@ const FormCreationPage = () => {
     const onClickHandler = (event) =>{
       event.preventDefault();
       setFieldCount((prev) => prev+1)
-      setCurrField({fieldTitle:"",value:"",fieldIndex:fieldCount+1,fieldType:"text",options:[]});
+      setCurrField({fieldTitle:"",value:"",fieldIndex:fieldCount+1,fieldType:"text",options:""});
       setAllFields(prev => [...prev,currField]);
     }
 
