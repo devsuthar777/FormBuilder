@@ -23,9 +23,10 @@ const AllFormsPage = () => {
                 loader ? (<div className='loader  mx-auto'></div>) : (
                         <div className="w-10/12 min-h-[500px] mb-11 bg-blue-50 mt-8 rounded-xl gap-7 mx-auto flex flex-wrap items-center justify-center p-6" >
                             {
-                                formTemplates.map((element,index) => (
+                                formTemplates.length ?  formTemplates.map((element,index) => (
                                     <FormCard formDetails={element} key={index} />
-                                ))
+                                )) : <p className='text-xl font-bold'>No forms To show, Please create form first</p>
+
                             }
                         </div>
                         )

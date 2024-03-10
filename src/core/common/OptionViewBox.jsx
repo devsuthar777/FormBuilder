@@ -7,7 +7,7 @@ const OptionViewBox = ({element,valData,onChangeFieldHandler,index}) => {
   
   const [checkBoxData,setCheckBoxData]= useState({});
 
-  useEffect(()=>{
+  useEffect((event)=>{
    
     let options = JSON.parse(element.options);
     console.log(options);      
@@ -15,35 +15,55 @@ const OptionViewBox = ({element,valData,onChangeFieldHandler,index}) => {
     Object.values(options).forEach(value => {
     arrayElement.push( value);
     setAllOptions(arrayElement);
-    setCheckBoxData(valData[0] ? JSON.parse(valData[0]) : {});
+    if(element.fieldType !="dropdown")
+    {
+          try
+          {
+            setCheckBoxData(valData[index] ? JSON.parse(valData[index]) : {});
+          }
+          catch(error)
+          {
+
+          }
+    } 
     
   });
  
   },[valData])
+
+
+   useEffect ( () => {
+      let event = {target:{name:"field"+index,value: "0"}};
+      if(element.fieldType =="dropdown") onChangeFieldHandler(event);
+
+    
+  
+   },[])
 
 const checkChangeHanlder = (event) => {
   console.log(event.target.name,event.target.checked);
   setCheckBoxData((prev) => 
    {
     let newObject = {...prev,[event.target.name]:event.target.checked};
-    event.target.name="field"+index;
-    event.target.value= JSON.stringify(newObject);
-    onChangeFieldHandler(event);
+  
+    onChangeFieldHandler({target:{name:"field"+index,value:JSON.stringify(newObject)}});
     return newObject;
    }
   )
 }
-console.log("allOptions",checkBoxData);
+console.log("allOptions",checkBoxData,valData[index]);
+
 
 
   return (
     <div className='w-full'>
     {
       element.fieldType == "dropdown" ? (
-        <select className='min-w-[30%] px-5 h-10 text-lg rounded-lg' name={"field"+index} onChange={onChangeFieldHandler} value={valData[index]} >
+        <select className='min-w-[30%] px-5 h-10 text-lg rounded-lg' name={"field"+index} onChange={(event) =>onChangeFieldHandler(event)} value={valData[index] } >
           {
-            allOptions.map((val,index) => {
-            return <option value={index} >{val}</option>
+            allOptions.map((val,ind) => {
+              
+            return <option value={ind} >{val}</option>
           })
           }
         </select>
@@ -56,6 +76,7 @@ console.log("allOptions",checkBoxData);
              <input
              className='rounded-full w-5 h-5'
               type="checkbox"
+              id={"option"+ind}
               name={"option"+ind}
               value={ind}
 

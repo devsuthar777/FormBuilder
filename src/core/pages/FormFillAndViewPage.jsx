@@ -38,7 +38,7 @@ const FormFillAndViewPage = () => {
 
     function onChangeFieldHandler(event)
     {
-      const newAllFiels =  subData.map((item,i) => (i==event.target.name.replace("field","") ? event.target.value : item))
+      const newAllFiels =  subData.map((item,i) => (i==event?.target?.name.replace("field","") ? event.target.value : item))
       setSubData(newAllFiels);
      
     }
