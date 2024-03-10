@@ -64,8 +64,9 @@ const FormFillAndViewPage = () => {
       if(event.currentTarget.id=="navRight")
       {
         console.log(counter)
-        setCounter(prev=> prev+1==viewData.length ? prev : ++prev);
-        let viewDataArrayString = viewData[counter].formValue[0];
+        //setCounter(prev=> prev+1==viewData.length ? prev : ++prev);
+        setCounter(prev=> prev+1);
+        let viewDataArrayString = viewData[counter+1].formValue[0];
         viewDataArrayString = viewDataArrayString.split("##$$");
         console.log("viewDataArrayString",viewDataArrayString);
         setCurrViewData(viewDataArrayString);
@@ -74,8 +75,9 @@ const FormFillAndViewPage = () => {
       }
       else
       {
-        setCounter(prev=> prev==0 ? 0 : --prev);
-        let viewDataArrayString = viewData[counter].formValue[0];
+        //setCounter(prev=> prev==0 ? 0 : --prev);
+        setCounter(prev=> prev-1);
+        let viewDataArrayString = viewData[counter-1].formValue[0];
         viewDataArrayString = viewDataArrayString.split("##$$");
         console.log("viewDataArrayString",viewDataArrayString);
         setCurrViewData(viewDataArrayString);
@@ -106,7 +108,7 @@ const FormFillAndViewPage = () => {
             
             }
           </div>
-          { (viewDataFlag && viewData.length > 1 && counter==0) ? <button id="navRight" onClick={navigateHandler} className='hover:shadow-xl text-4xl h-max rounded-full hover:scale-105'><FaArrowAltCircleRight/></button> : <div  className='p-5'></div>}
+          { (viewDataFlag && viewData.length > 1 && counter+1!=viewData.length) ? <button id="navRight" onClick={navigateHandler} className='hover:shadow-xl text-4xl h-max rounded-full hover:scale-105'><FaArrowAltCircleRight/></button> : <div  className='p-5'></div>}
         </div>
         
         <div className=' w-full flex justify-center mt-3 mb-12'> 

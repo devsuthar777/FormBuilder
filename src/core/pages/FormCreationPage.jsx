@@ -8,7 +8,7 @@ const FormCreationPage = () => {
     
     const [fieldCount,setFieldCount] = useState(1); 
     const [loader,setLoader] = useState(false);    
-    const [currField,setCurrField] = useState({fieldTitle:"",value:"",fieldIndex:1,fieldType:"text",options:[]});
+    const [currField,setCurrField] = useState({fieldTitle:"",value:"",fieldIndex:1,fieldType:"text",options:""});
     const [allFields,setAllFields] = useState([currField]);
     const [formMetaData,setFormMetaData] = useState({title:"",description:"",publisherName:""});
     

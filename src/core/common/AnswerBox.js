@@ -14,7 +14,7 @@ const AnswerBox = ({fieldData,setFieldData}) => {
           case 'date':
             return <input className='rounded-md mt-2 w-5/10 px-10 py-2' type='date' placeholder={"DD/MM/YYYY"} ></input>;
           case 'radio':
-            return <OptionBox></OptionBox>;
+            return <OptionBox setFieldData={setFieldData}></OptionBox>;
           case 'dropdown':
                 return <OptionBox setFieldData={setFieldData}></OptionBox>;
         default: return <p>This is the default content.</p>;
