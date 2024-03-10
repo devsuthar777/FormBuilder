@@ -50,8 +50,8 @@ const OptionBox = ({setFieldData}) => {
     const fieldRemoveHandler = (event) =>
     {
         event.preventDefault();
-        setOtionFields(prev => [...prev,""]);
-        setOptionCount(prev => prev+1);
+        setOtionFields(prev => prev.slice(0, -1));
+        setOptionCount(prev => prev-1);
     }
     console.log(optionFields,optionCount);
     console.log()
@@ -66,17 +66,25 @@ const OptionBox = ({setFieldData}) => {
                         placeholder={"Option "+(index+1)}></input>
                         <div className='flex gap-3'>
                         {
-                            optionCount == index ? (<><button  onClick={fieldAddHandler} className='w-5 h-5 font-bold text-sm bg-richblack-25 text-richblue-800 hover:scale-105 hover:shadow-xl flex text-center items-center justify-center rounded-full '><span className='mx-auto my-auto'>+</span></button>
-                            <button  onClick={fieldAddHandler} className='w-5 h-5 bg-richblack-25 font-bold text-xl text-richblue-800 hover:scale-105 hover:shadow-xl flex items-center justify-center text-center rounded-full'><span >-</span></button>
-                            </>) : (<div></div>)
+                            optionCount == index ? 
+                            (<div className='flex gap-3'><button  onClick={fieldAddHandler} 
+                                    className='w-5 h-5 font-bold text-sm bg-richblack-25 text-richblue-800 hover:scale-105 
+                                    hover:shadow-xl flex text-center items-center justify-center rounded-full '>
+                                    <span className='mx-auto my-auto'>+</span>
+                                </button>
+                            {optionCount != 0 ? (
+                                <button  onClick={fieldRemoveHandler} className='w-5 h-5 bg-richblack-25 font-bold text-xl text-richblue-800 hover:scale-105 
+                            hover:shadow-xl flex items-center justify-center text-center rounded-full'><span >-</span></button>) 
+                            : (<div></div>
+                            )}
+                            </div>
+                            ) : (<div></div>)
                         }
                         </div>
                     </div>
                  ))
             }
-        </div>
-   
-  )
+        </div>)
 }
 
 export default OptionBox
