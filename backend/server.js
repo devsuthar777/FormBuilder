@@ -8,6 +8,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 //const bodyParser = require('body-parser');
 
 require('dotenv').config();
@@ -16,6 +17,7 @@ const PORT = 4000;
 const formRoutes = require('./routes/formRoutes');
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser())
 
 //mount  the formsRoute route
 app.use("/api/v1",formRoutes);
