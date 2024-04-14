@@ -1,5 +1,6 @@
 
-const formField= require('../models/formFields');
+const formField = require('../models/formFields');
+
 exports.createField = async (AllFieldsJson) =>
 {    
     
