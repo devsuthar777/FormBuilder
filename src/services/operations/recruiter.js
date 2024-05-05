@@ -25,7 +25,7 @@ export const createRecruiterInfo = async (bodyData,visitorToken) => {
     {
         console.log(error);
         
-        toast.error('Something went wrong! Please try again');
+        toast.error('Something went wrong! Refresh the page');
     }
 
 }

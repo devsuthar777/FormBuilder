@@ -31,7 +31,7 @@ exports.auth = (req,res,next) => {
                 {
                     return res.status(401).json({
                         success:false,
-                        message: "Invalid token!"
+                        message: "You aren't valid user!"
                     })
                 }
 

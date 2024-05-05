@@ -22,10 +22,10 @@ router.post('/test',auth, (req,res) => {
 });
 //middleware test route
 
-router.post('/createForm',createForm);
-router.post('/submitForm',submitForm);
-router.get('/viewAllForms',viewAllForms);
-router.post('/viewFormData',viewFormData);
-router.post('/viewFormTemplate',viewFormTemplate);
+router.post('/createForm',auth,createForm);
+router.post('/submitForm',auth,submitForm);
+router.get('/viewAllForms',auth,viewAllForms);
+router.post('/viewFormData',auth,viewFormData);
+router.post('/viewFormTemplate',auth,viewFormTemplate);
 
 module.exports = router;

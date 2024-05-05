@@ -12,3 +12,9 @@ export const submitForm = {
     SUBMIT_FORM :  BASE_URL + 'submitForm',
 }
 
+export const authUser = {
+    
+    SIGNUP_USER : BASE_URL + "signup",
+    LOGIN_USER : BASE_URL + "login"
+}
+
