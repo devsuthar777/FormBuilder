@@ -12,6 +12,10 @@ const AllFormsPage = () => {
         retriveFormTemplates(setLoader,setFormTemplates);
     },[])
 
+    console.log("FormTemplates",formTemplates);
+
+
+
 
     
   return (

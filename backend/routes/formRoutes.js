@@ -24,9 +24,9 @@ router.post('/test',auth, (req,res) => {
 //middleware test route
 
 router.post('/createForm',auth,createForm);
-router.post('/submitForm',auth,submitForm);
+router.post('/submitForm',submitForm);
 router.get('/viewAllForms',auth,viewAllForms);
 router.post('/viewFormData',auth,viewFormData);
-router.post('/viewFormTemplate',auth,viewFormTemplate);
+router.post('/viewFormTemplate',viewFormTemplate);
 
 module.exports = router;
