@@ -3,12 +3,17 @@ import toast from 'react-hot-toast';
 import { login } from '../../services/operations/login';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+import { contWithGoogle } from '../../services/operations/contWithGoogle';
+
+//require('dotenv').config();
 
 const Login = () => {
     const [formData,setFormData] = useState({email:"",password:""});
     const [loader,setLoader] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    //alert(process.env.REACT_APP_OAUTH_CLIENT_ID);
 
     const submitHandler  = (event) => {
         console.log(event);
@@ -39,6 +44,16 @@ const Login = () => {
     const formKeyPressHandler = (event) => {
         console.log(event.target.name,event.target.value);
         setFormData((prev) =>  ({...prev,[event.target.name] : event.target.value}))
+    }
+
+    const resolveHandler = (data) => {
+        console.log( data);
+        contWithGoogle(data.credential,setLoader,dispatch,navigate)
+
+    }
+
+    const rejectHandler = (err) => {
+        console.log("error",err);
     }
 
   return (
@@ -80,11 +95,16 @@ const Login = () => {
             </div>
         </form>
         
-        <div className='w-full flex flex-col'>
+             <div className='w-full flex flex-col'>
                <span className='w-full flex items-center gap-2 '><div className='w-full h-[1px] bg-black'></div><p>Or</p><div className='w-full h-[1px] bg-black'></div></span> 
-
-               <div><p className='font-bold'>Login with</p>  <button></button></div>
-        </div>
+                <div className='mx-auto mt-6'>
+                <GoogleLogin
+                onSuccess={resolveHandler}
+                onError={rejectHandler}
+                />
+               </div>
+                </div>
+               
                 </>
             )
         }

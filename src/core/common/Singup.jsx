@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import {signup} from "../../services/operations/signup"
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+import { contWithGoogle } from '../../services/operations/contWithGoogle';
+import { useDispatch } from 'react-redux';
 
 const Singup = () => {
 
     const [formData,setFormData] = useState({name:"",email:"",password:"",confirmPassword:""});
     const [loader,setLoader] = useState(false);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 
     const submitHandler  = (event) => {
         console.log(event);
@@ -42,6 +47,17 @@ const Singup = () => {
     const formKeyPressHandler = (event) => {
         console.log(event.target.name,event.target.value);
         setFormData((prev) =>  ({...prev,[event.target.name] : event.target.value}))
+    }
+
+    
+    const resolveHandler = (data) => {
+        console.log( data);
+        contWithGoogle(data.credential,setLoader,dispatch,navigate)
+
+    }
+
+    const rejectHandler = (err) => {
+        console.log("error",err);
     }
 
   return (
@@ -89,10 +105,16 @@ const Singup = () => {
             </div>
         </form>
         
-        <div>
-
+        <div className='w-full flex flex-col'>
+            <span className='w-full flex items-center gap-2 '><div className='w-full h-[1px] bg-black'></div><p>Or</p><div className='w-full h-[1px] bg-black'></div></span> 
+                <div className='mx-auto mt-6'>
+                 <GoogleLogin
+                 onSuccess={resolveHandler}
+                 onError={rejectHandler}
+                />
+                </div>
         </div>
-                </>
+                    </>
             )
         }
         

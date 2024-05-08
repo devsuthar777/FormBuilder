@@ -15,6 +15,7 @@ export const submitForm = {
 export const authUser = {
     
     SIGNUP_USER : BASE_URL + "signup",
-    LOGIN_USER : BASE_URL + "login"
+    LOGIN_USER : BASE_URL + "login",
+    CONT_GOOGLE: BASE_URL + "contWithGoogle"
 }
 
