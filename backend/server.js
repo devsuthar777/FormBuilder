@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 //const bodyParser = require('body-parser');
 
 require('dotenv').config();
-const PORT = 4000;
+const PORT = env.process.PORT || 4000;
 //importing routes
 const formRoutes = require('./routes/formRoutes');
 app.use(express.json());
