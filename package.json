@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nodesrver": "nodemon backend/server.js",
+    "nodeStart": "node server.js",
     "server": "cd backend && npm run nodesrver",
     "prodServer": "npm run nodesrver",
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run nodesrver\""
