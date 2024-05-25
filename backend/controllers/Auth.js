@@ -3,6 +3,7 @@ const User = require('../models/User');
 const jsonwebtoken = require('jsonwebtoken');
 const { options } = require('../routes/formRoutes');
 const { jwtDecode } = require('jwt-decode');
+const GuestInfo = require('../models/GuestInfo');
 
 require('dotenv').config();
 //signup route handler
@@ -254,6 +255,29 @@ exports.contWithGoogle = async(req,res) => {
         return res.status(500).json({
             success:false,
             message:"Something went wrong!"
+        })
+    }
+}
+
+//Activate Server
+exports.activateServer = async(req,res) => {
+    try
+    {
+        const {guestVisitDate} = req.body;
+        console.log(req.body);
+        const guestData = await GuestInfo.create({guestVisitDate});
+        return res.status(200).json({
+            success:true,
+            message: "Guest Info Pushed",
+            data:guestData
+        })
+    }
+    catch(error)
+    {
+        console.log(error);
+        return res.status(500).json({
+            success:false,
+            message:"Something went wrong for guest push data"
         })
     }
 }

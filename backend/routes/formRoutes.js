@@ -6,13 +6,14 @@ const {viewAllForms} = require('../controllers/viewAllForms');
 const {viewFormData} = require('../controllers/viewFormData');
 const {submitForm} = require('../controllers/submitForm');
 const {viewFormTemplate} = require('../controllers/viewFormTemplate');
-const {login,signup, contWithGoogle} = require('../controllers/Auth');
+const {login,signup, contWithGoogle, activateServer} = require('../controllers/Auth');
 const { auth } = require('../middlewares/auth');
 
 
 router.post('/login',login);
 router.post('/signup',signup);
 router.post('/contWithGoogle',contWithGoogle);
+router.post('/onLoadServerStart',activateServer);
 
 //middleware test route
 router.post('/test',auth, (req,res) => {

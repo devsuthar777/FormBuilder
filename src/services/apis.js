@@ -16,6 +16,7 @@ export const authUser = {
     
     SIGNUP_USER : BASE_URL + "signup",
     LOGIN_USER : BASE_URL + "login",
-    CONT_GOOGLE: BASE_URL + "contWithGoogle"
+    CONT_GOOGLE: BASE_URL + "contWithGoogle",
+    ACTIVAE_SERVER: BASE_URL+ "onLoadServerStart"
 }
 

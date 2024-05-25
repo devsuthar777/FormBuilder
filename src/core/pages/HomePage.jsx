@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import imageLogo from '../assests/logo-white.png'
 import RegisterButtons from '../common/RegisterButtons'
 import { useSelector } from 'react-redux'
+import { activateServer } from '../../services/operations/activateServer'
 const HomePage = () => {
 
   const token = useSelector(state => state.auth.token);
+
+  useEffect(function(){
+    activateServer()
+  },[]);
 
   return (
     <div className='w-10/12 mx-auto mt-7'>
